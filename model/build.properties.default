@@ -1,0 +1,10 @@
+# The name of the project 
+propel.project = piplay
+
+# The Propel driver to use for generating SQL, etc.
+propel.database = mysql
+
+# This must be a PDO DSN
+propel.database.url = mysql:dbname=piplay
+propel.database.user = piplay
+# propel.database.password = 123

@@ -1,0 +1,8 @@
+<?php
+
+define('MPLAYER_PID',       '/tmp/piplay.mplayer.pid');
+define('MPLAYER_FIFO',      '/tmp/piplay.fifo');
+define('MPLAYER_HOME',      '/var/www');
+define('MPLAYER_OUTPUT',    '/tmp/piplay.mplayer.output');
+
+// vim: ts=4 sw=4 et
