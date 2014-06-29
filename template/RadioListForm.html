@@ -7,11 +7,19 @@ function playRadio(id) {
 	r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	r.send('action=PlayRadio&id=' + id);
 }
+function stop() {
+	var r = new XMLHttpRequest();
+	r.open('POST', 'ajax.php', false);
+	r.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	r.send('action=Stop');
+}
 </script>
 </head>
 <body>
 <!-- BEGIN radio -->
 <input type="button" value="{name}" onclick="playRadio({id})">
 <!-- END radio -->
+<br><br>
+<input type="button" value="STOP" onclick="stop()">
 </body>
 </html>

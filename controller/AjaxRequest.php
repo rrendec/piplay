@@ -5,8 +5,12 @@ require_once 'Mplayer.php';
 
 class AjaxRequest extends BaseRequest {
     public function dispatch() {
-		$radio = RadioQuery::create()->findPK($_POST['id']);
 		$mplayer = new Mplayer();
+        if ($_POST['action'] == 'Stop') {
+			$mplayer->sendCmd(Mplayer::CMD_STOP);
+			return;
+		}
+		$radio = RadioQuery::create()->findPK($_POST['id']);
 		$mplayer->play($radio->getUrl());
         $this->response = true;
     }

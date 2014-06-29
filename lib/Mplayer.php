@@ -5,6 +5,7 @@ class Mplayer {
 	const SHELL_EXEC = 'bash -c %s';
 
     const CMD_LOADFILE = 'loadfile';
+	const CMD_STOP = 'stop';
 
     public function getPid() {
         $pid = @file_get_contents(MPLAYER_PID);
