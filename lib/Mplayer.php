@@ -2,6 +2,7 @@
 
 class Mplayer {
     const RUN_CMD = 'HOME=%s mplayer -slave -quiet -input file=%s %s </dev/null &>%s & echo $!';
+	const SHELL_EXEC = 'bash -c %s';
 
     const CMD_LOADFILE = 'loadfile';
 
@@ -20,6 +21,8 @@ class Mplayer {
             escapeshellarg($url),
             escapeshellarg(MPLAYER_OUTPUT)
         );
+		$cmd = sprintf(self::SHELL_EXEC,
+			escapeshellarg($cmd));
         if (!($pid = exec($cmd)))
             return false;
         file_put_contents(MPLAYER_PID, $pid);
